@@ -130,5 +130,19 @@ public class GameManager : MonoBehaviour
         }
 
         //Instantiate(next, fruitArtSpawnPosition.position, next.transform.rotation);
+
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject otherFruit = collision.gameObject;
+
+        if (otherFruit == cherry)
+        {
+            Instantiate(strawberry, otherFruit.transform.position, strawberry.transform.rotation);
+            Destroy(otherFruit);
+            Destroy(cherry);
+        }
     }
 }
