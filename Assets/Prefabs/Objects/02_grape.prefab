@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 980449478119391071}
   - component: {fileID: -9144279165008127950}
   - component: {fileID: -1611154606975931927}
+  - component: {fileID: 1980833152141814294}
   m_Layer: 0
   m_Name: 02_grape
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.305
+--- !u!114 &1980833152141814294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471411360180077524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582e70458ee6e3f44ac443131bddc54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCloud: 1

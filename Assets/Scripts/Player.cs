@@ -1,58 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Player : MonoBehaviour
 {
-    /*public GameObject cherry;
-    public GameObject strawberry;
-    public GameObject grape;
-    public GameObject gyool;
-    public GameObject orange;
-    public GameObject apple;
-    public GameObject pear;
-    public GameObject peach;
-    public GameObject pineapple;
-    public GameObject melon;
-    public GameObject watermelon;
+    public Transform[] fruitArr;
+    static public bool isSpawned = false;
+    static public Vector2 playerPosX;
 
-    public List<GameObject> startingFruits = new List<GameObject>();
-
-    public int randomNumber;
-    public Transform fruitSpawnPosition;
-    */
-
-    public bool isEmpty;
+    public Transform fruitSpawnPosObj;
+    static public Transform fruitSpawnPosition;
+    public ParticleSystem smoke;
 
     void Start()
     {
-        /*startingFruits.Add(cherry);
-        startingFruits.Add(strawberry);
-        startingFruits.Add(grape);
-        startingFruits.Add(gyool);
-        */
         Vector3 mousePosition = Input.mousePosition;
+        fruitSpawnPosition = fruitSpawnPosObj;
+        GetComponent<ParticleSystem>();
     }
 
     private void Update()
     {
+        SpawnFruit();
+
+        fruitSpawnPosition = fruitSpawnPosObj;
+
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(mousePosition.x, transform.position.y, transform.position.z);
 
         if (mousePosition.x < -1.87) transform.position = new Vector3(-1.87f, transform.position.y, transform.position.z);
         if (mousePosition.x > 3) transform.position = new Vector3(3f, transform.position.y, transform.position.z);
     }
-    /*
-    public void GetRandomFruit()
+
+    private void SpawnFruit()
     {
-        randomNumber = Random.Range(0, 4);
-        Instantiate(startingFruits[randomNumber], fruitSpawnPosition);
+        if (isSpawned == false)
+        {
+            StartCoroutine(Timer());
+
+            
+            isSpawned = true;
+        }
     }
 
-    public void OnMouseUp()
+    IEnumerator Timer()
     {
-        GetRandomFruit();
+        yield return new WaitForSeconds(0.75f);
+        smoke.Play();
+        Instantiate(fruitArr[Random.Range(0, 4)], fruitSpawnPosition.position, fruitArr[0].rotation);
     }
-    */
 
 }

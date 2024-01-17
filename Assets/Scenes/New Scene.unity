@@ -791,6 +791,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 747818719}
+  - {fileID: 980952693}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &204510224
@@ -840,7 +841,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59a32d5cf2a3fe4f8b1171f8289d353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEmpty: 0
+  fruitArr:
+  - {fileID: 5898835316175422963, guid: 1778441c1d6cdc043983a0f3a42c56e4, type: 3}
+  - {fileID: 6842242143583508628, guid: 4f93be60b4164984e8ecf8a5687755da, type: 3}
+  - {fileID: 9016485844927513818, guid: 0d90d41e5f9da7c44972667e84bd6473, type: 3}
+  - {fileID: 7212285386303570600, guid: e37c9d28cdea5894eae5f55166532578, type: 3}
+  - {fileID: 3893289472339306868, guid: 759f7b4c8de8bf8419242a79caf081f4, type: 3}
+  - {fileID: 858204022679980529, guid: 7af46e04f2a05814eb1fcd081eca4883, type: 3}
+  - {fileID: 4196030091194404119, guid: 8a4c3420b0bb0fa44aabc6def32a0b60, type: 3}
+  - {fileID: 1728259712629611064, guid: a29fa5af35963034f9414ad66c2628ea, type: 3}
+  - {fileID: 5177563159568893531, guid: 8f655e4cceca07744ab4e64dd7065657, type: 3}
+  - {fileID: 3656643432925909727, guid: cf26294605c502b4789e1e9cf908a0a0, type: 3}
+  - {fileID: 8264880969831686718, guid: f6cd79fe7e7f89a42b980095ed35c1e8, type: 3}
+  fruitSpawnPosObj: {fileID: 747818719}
+  smoke: {fileID: 980952691}
 --- !u!1 &275058615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2058,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!198 &980952691 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+  m_PrefabInstance: {fileID: 1826349095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &980952693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+  m_PrefabInstance: {fileID: 1826349095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112785312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,29 +3099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c0270bf2534ae45b6d62ac9919ffb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cherry: {fileID: 6863958057975028518, guid: 1778441c1d6cdc043983a0f3a42c56e4, type: 3}
-  strawberry: {fileID: 7754282240183926908, guid: 4f93be60b4164984e8ecf8a5687755da, type: 3}
-  grape: {fileID: 1471411360180077524, guid: 0d90d41e5f9da7c44972667e84bd6473, type: 3}
-  gyool: {fileID: 5954390284355388229, guid: e37c9d28cdea5894eae5f55166532578, type: 3}
-  orange: {fileID: 5154395026046074626, guid: 759f7b4c8de8bf8419242a79caf081f4, type: 3}
-  apple: {fileID: 5965389500995704146, guid: 7af46e04f2a05814eb1fcd081eca4883, type: 3}
-  pear: {fileID: 1676117733434830466, guid: 8a4c3420b0bb0fa44aabc6def32a0b60, type: 3}
-  peach: {fileID: 7476805400764676720, guid: a29fa5af35963034f9414ad66c2628ea, type: 3}
-  pineapple: {fileID: 2823174590099345733, guid: 8f655e4cceca07744ab4e64dd7065657, type: 3}
-  melon: {fileID: 4159245273391285327, guid: cf26294605c502b4789e1e9cf908a0a0, type: 3}
-  watermelon: {fileID: 1838566538115315977, guid: f6cd79fe7e7f89a42b980095ed35c1e8, type: 3}
-  cherry_Art: {fileID: 5628073593750365840, guid: 9037d5cdc73ec5847840427d13bbd83a, type: 3}
-  strawberry_Art: {fileID: 4921181690066303217, guid: fecef9d951ee8e844a2de2ea68a6c421, type: 3}
-  grape_Art: {fileID: 5277330087131595911, guid: 962987b0a4d9a6f41b3a301be3d7fe9c, type: 3}
-  gyool_Art: {fileID: 5335755563221699504, guid: 40e01e65fc8ad6244ad2a0039de79951, type: 3}
-  startingFruits: []
-  randomNumber1: 0
-  randomNumber2: 0
-  fruitSpawnPosition: {fileID: 747818719}
-  fruitArtSpawnPosition: {fileID: 36368016}
-  currentFruit: {fileID: 0}
-  nextFruit: {fileID: 0}
-  checkIfNull: 0
 --- !u!1 &1734151584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,6 +3229,83 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &1826349095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 204510223}
+    m_Modifications:
+    - target: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_Name
+      value: msVFX_Stylized Smoke 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.23809525
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.23809525
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23809525
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5793651
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44444442
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
 --- !u!1 &1986665128
 GameObject:
   m_ObjectHideFlags: 0

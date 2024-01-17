@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5212871804448762623}
   - component: {fileID: 3581651576743520440}
   - component: {fileID: -414775111661801701}
+  - component: {fileID: -7857371641188306728}
   m_Layer: 0
   m_Name: 08_pineapple
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.02
+--- !u!114 &-7857371641188306728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823174590099345733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582e70458ee6e3f44ac443131bddc54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCloud: 1

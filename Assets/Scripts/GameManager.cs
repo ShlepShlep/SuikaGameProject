@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject cherry;
+    /*public GameObject cherry;
     public GameObject strawberry;
     public GameObject grape;
     public GameObject gyool;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void OnMouseUp()
     {
-        /*
+        *//*
         if (checkIfNull == 0)
         {
             GetRandomFruit();
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         currentFruit = nextFruit;
         randomNumber2 = Random.Range(0, 4);
         nextFruit = startingFruits[randomNumber2];
-        */
+        *//*
     }
 
     public void PrintFruit()
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         randomNumber2 = Random.Range(0, 4);
         nextFruit = startingFruits[randomNumber2];
 
-        /*if (nextFruit = cherry)
+        *//*if (nextFruit = cherry)
         {
             Instantiate(cherry_Art, fruitArtSpawnPosition.position, cherry_Art.transform.rotation);
         }
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         else if (nextFruit == gyool)
         {
             Instantiate(gyool_Art, fruitArtSpawnPosition.position, gyool_Art.transform.rotation);
-        }*/
+        }*//*
     }
 
     public void ShowNext(GameObject next)
@@ -144,5 +144,5 @@ public class GameManager : MonoBehaviour
             Destroy(otherFruit);
             Destroy(cherry);
         }
-    }
+    }*/
 }
