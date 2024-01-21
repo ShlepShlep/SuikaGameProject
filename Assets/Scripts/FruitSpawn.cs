@@ -8,7 +8,11 @@ public class FruitSpawn : MonoBehaviour
     public bool inCloud = true;
     void Start()
     {
-        
+        if(transform.position.y < 2.7)
+        {
+            inCloud = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +29,17 @@ public class FruitSpawn : MonoBehaviour
             inCloud = false;
             Player.isSpawned = false;
             
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == gameObject.tag)
+        {
+            Player.newFruitSpawnPos = transform.position;
+            Player.newFruit = true;
+            Player.whichFruit = int.Parse(gameObject.tag);
+            Destroy(gameObject);
         }
     }
 }
