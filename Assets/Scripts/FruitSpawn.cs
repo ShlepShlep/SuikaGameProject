@@ -11,6 +11,7 @@ public class FruitSpawn : MonoBehaviour
 {
     public bool inCloud = true;
     private bool timeToCheck = false;
+    public AudioClip mergeSound;
     
     //static public int rounded;
     
@@ -93,9 +94,11 @@ public class FruitSpawn : MonoBehaviour
                 Player.score += 66;
             }
             #endregion
+            print("sjdgfsl");
             Player.newFruitSpawnPos = transform.position;
             Player.newFruit = true;
             Player.whichFruit = int.Parse(gameObject.tag);
+            AudioSystem.Play(mergeSound);
             /*score = score * Random.Range(1.01f, 1.05f); ;
             rounded = (int)Math.Ceiling(score);*/
             PlayerPrefs.SetInt("score", Player.score);

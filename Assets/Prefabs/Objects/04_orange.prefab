@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inCloud: 1
+  mergeSound: {fileID: 8300000, guid: e6f974da748acad49ac50156def10498, type: 3}
